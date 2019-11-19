@@ -29,15 +29,17 @@ class: center, middle
 # Agenda
 
 1. Introduction
+
 2. Differences (lightning-fast!)
 
 ---
 
 # Introduction
 
-Hi! I'm John Eskew - Game/Web Developer.
+Hi! I'm Julia Eskew - Game/Web Developer.
+.center[![me](./julia_bitmoji.png)]
 
-I've attended three Game Developers Conferences.
+I've attended a few Game Developers Conferences - and XFests (Microsoft-run XBox confs).
 ---
 
 # Titles I've Helped Ship
@@ -46,10 +48,12 @@ I've attended three Game Developers Conferences.
 --
 
 - Backends of lots of ActiveX-based, browser-based, skill-based games, such as:
-- Solitaire Rush, Scrabble Cubes, Wheel of Fortune, Minesweeper, Trivia, etc.
+
+    - Solitaire Rush, Scrabble Cubes, Wheel of Fortune, Minesweeper, Trivia, etc.
 --
 
 - Pirates of the Caribbean Mobile
+
 - EA Sports NASCAR 2007 Mobile (Brew/J2ME)
 --
 
@@ -70,24 +74,57 @@ class: center, middle
 class: center, middle
 <iframe width="560" height="315" src="https://www.youtube.com/embed/gSqK4PxpqCA?rel=0" frameborder="0" allowfullscreen></iframe>
 ---
+class: center, middle
+# Apples vs. Oranges?
+---
+# Apples vs. Oranges
+
+(Console) Game Development:
+
+--
+
+- __Fat client__ developed in lower-level language running directly on OS.
+
+--
+
+- Network service is typically secondary (though not always.)
+
+--
+
+Web Development:
+
+--
+
+- Browser-based client using Web "standards" (HTML/CSS/JS)
+    - Sometimes using browser plugins.
+
+--
+
+- Most development is performed on the __network service__.
+
+---
+class: center, middle
+# But - it's software development in either case, so...
+---
+class: center, middle
 # Differences
+---
+class: center
+# The Big Difference
 --
 
-The Big Difference
-==================
---
-
-- Binary Files
+## Binary Files
+.center[![BinaryTunnel](./BinaryTunnel.jpg)]
 ---
 # Binary Files
 
 Types:
 
--   Animation (motion captured / hand-crafted)
+-   3D models - Mesh, Textures, Bones
 
 --
 
--   3D models - Mesh, Textures, Bones
+-   Animation (motion captured / hand-crafted)
 
 --
 
@@ -100,6 +137,10 @@ Types:
 --
 
 -   Video - Attract video, cutscenes (if not in-engine)
+
+--
+
+-   World geometry (levels, tile-based, etc.)
 
 --
 
@@ -120,7 +161,7 @@ Types:
 
 --
 
-__<center>Branching is a *big deal*.</center>__
+__<center>Branching is a *BIG DEAL*.</center>__
 ---
 # Engine
 
@@ -148,11 +189,36 @@ __<center>Branching is a *big deal*.</center>__
     - But also skeletons. And voice!
 
 ---
+# Math!
+
+--
+
+- You __do__ need to know that a plane is defined by a normal vector!
+
+--
+
+- Also lots more:
+
+--
+
+    - Which way is Z facing?
+--
+    - Right-hand rule
+--
+    - How to do math fast - fixed point vs. floating point
+--
+    - Quaternions
+--
+    - Velocity/acceleration (derivates/integrals - Calculus!)
+--
+    - Transformation between coordinate systems
+
+---
 # Performance!
 
 --
 
-- *Must* be (*at least*) 30 FPS. *Always*.
+- *Must* be (*at least*) (consistently) 30 FPS. *Always*.
 
 --
 
@@ -177,6 +243,14 @@ __<center>Branching is a *big deal*.</center>__
     - Down to the layout of assets on-disk corresponding to in-game loading.
 ---
 # Network
+
+- Web-based? HTTP/S...
+
+    - TCP
+
+    - Maybe Websockets as well.
+
+--
 
 - Game play? No TCP!
 
@@ -203,8 +277,14 @@ __<center>Branching is a *big deal*.</center>__
 - Nearly all game engines offer a high-level scripting language.
 
     - Designers/artists/animators/audio folks use the scripting language.
+
+--
+
+- (BTW: You work with artists/animators/audio folks.)
+
 ---
 # Business
+--
 
 - Black Friday!
 
@@ -227,21 +307,94 @@ __<center>Branching is a *big deal*.</center>__
     - Project to project.
 
 ---
-# Similarities
-
-- Playtesting vs. UX research
+# Many Hats
 
 --
 
-- Rapid Prototyping!
+You get to work on __lots__ of neat things.
 
+--
+
+Things I've worked on in games:
+--
+
+- Stitching together audio files buffered from CD to say: "Jeff Emig... finishes strong at... second place!"
+--
+
+- Crossfading audio files of different-sized motorcycles running at different RPMs to create bike sounds.
+--
+
+- Posing a motorcycle rider's legs/arms on a bike based on bike position and rider position using inverse kinematics.
+--
+
+- Movement control system for flying villians using a PID controller
+--
+
+- Wrote a program to rate the difficulty of card shuffles when using/solving them in a game of Solitaire.
+--
+
+- Kinect-based hand cursor used to highlight and select waypoints in a 3D environment.
+
+
+---
+# Similarities
+
+- Playtesting is akin to UX research
+
+--
+    - Rapid Prototyping!
+
+--
     - "Find the fun."
+
+--
+
+- Software development
+
+--
+
+    - Same as it ever was....
+
+--
+    - Gnarly debugging.
+
+--
+    - Estimation and schedules.
+
+--
+    - Following best practices.
+
+--
+    - Learning the tools and using them effectively.
+
+
+---
+# Similarities
+
+.center[![teamwork](./feature_teamwork.jpg)]
 
     </textarea>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js" type="text/javascript">
     </script>
     <script type="text/javascript">
-      var slideshow = remark.create();
+      var slideshow = remark.create({
+        ratio: '16:9',
+        // Navigation options
+        navigation: {
+          // Enable or disable navigating using scroll
+          // Default: true
+          // Alternatives: false
+          scroll: false,
+          // Enable or disable navigation using touch
+          // Default: true
+          // Alternatives: false
+          touch: true,
+          // Enable or disable navigation using click
+          // Default: false
+          // Alternatives: true
+          click: true
+        },
+    });
     </script>
   </body>
 </html>
